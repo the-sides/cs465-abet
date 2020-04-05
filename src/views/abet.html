@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='styles/results.css'>
+    <title>UTK ABET</title>
+</head>
+<body>
+    <header>
+        <h4>UTK ABET</h4>
+        <div>
+            <figure>
+                <!-- Yeah, I know this isn't how svg's shouldn't be displayed. Bite me. -->
+                <img src="images/person-fill.svg" alt="profile">
+            </figure>
+            <nav>
+            </nav>
+        </div>
+    </header>
+    <section class="wrapper">
+        <nav>
+            <h4>Section</h4>
+            <select name="section" id="section">
+                <option value="sp2019">COSC365 spring 2019</option>
+            </select>
+            <a href="">Outcome 2</a>
+            <a href="">Outcome 3</a>
+            <a href="">Outcome 4</a>
+            <a href="">Outcome 5</a>
+            <a href="">Outcome 6</a>
+        </nav>
+        <main>
+            <section class="results">
+                <h3>Results</h3>
+                <section class="description"></section>
+                <section class="example"></section>
+                <section class="expectations">
+                    <div class="labels">
+                            <label for="bad">Not Meets Expectations</label>
+                            <label for="ok">Meets Expectations</label>
+                            <label for="good">Exceeds Expectations</label>
+                            <p>Total</p>
+                    </div>
+                    <div class="filters">
+                        <span class="line"></span>
+                            <input type="number" name="bad" id="bad">
+                            <input type="number" name="ok" id="ok">
+                            <input type="number" name="good" id="good">
+                            <p class="totalValue">...</p>
+                        </div>
+                    </div>
+                    <button type="submit">Save Results</button>
+                </section>
+            </section>
+            <section class="ass-plan">
+                <h3>Assessment Plan</h3>
+                <ol>
+                    <li>Please enter your ...</li>
+                    <li>Always press "Save Assessments" when ...</li>
+                </ol>
+                <div class="labels">
+                    <p>Weight (%)</p>
+                    <p>Description</p>
+                    <p>Remove</p>
+                </div>
+                <div class="inputs">
+                    <input type="number" name="weight" id="weight">
+                    <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+                    <button><img src="images/trash.svg" alt="trashbin"></button>
+                </div>
+                <button>New</button>
+                <button>Save Assessments</button>
+            </section>
+            <section class="summary">
+                <h3>Narrative Summary</h3>
+                <p>Please enter your narractive for each outcome ...</p>
+                <p>Strengths</p>
+                <textarea name="strengths" id="strengths" cols="30" rows="10"></textarea>
+                <p>Weaknesses</p>
+                <textarea name="weaknesses" id="weaknesses" cols="30" rows="10"></textarea>
+                <p>Actions</p>
+                <textarea name="actions" id="actions" cols="30" rows="10"></textarea>
+                <button>Save Narrative</button>
+            </section>
+        </main>
+    </section>
+</body>
+</html>
