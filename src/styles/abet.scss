@@ -72,10 +72,6 @@ nav.main-nav {
         }
     }
 }
-main {
-    padding: 0 2rem;
-    width: 100%;
-}
 
 h2 {
     font-size: 24px;
@@ -102,6 +98,11 @@ h2 {
     &:focus {
         box-shadow: inset $black 0px 0px 8px ;
     }
+}
+
+main {
+    padding: 0 2rem;
+    width: 100%;
 }
 
 .results {
