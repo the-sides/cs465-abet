@@ -48,19 +48,33 @@ header {
 }
 
 nav.main-nav {
-    max-width: 150px;
-    padding-left: 1rem;
+    width: 300px;
     background-color: $lightgrey;
     border-right: 1px solid $grey;
+    overflow: hidden;
+    h4, select {
+        margin-left: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    select {
+        padding: 0.8rem 1rem;
+    }
     a {
         display: block;
+        width: 100%;
+        border: solid 1px $grey;
+        margin-bottom: -1px; // For border overlap
+        text-decoration: none;
+        color: $blue;
+        padding: 1rem 0.8rem;
+        &:hover{
+            color: purple;
+        }
     }
 }
 main {
     padding: 0 2rem;
     width: 100%;
-    // margin-left: auto;
-    // margin-right: auto;
 }
 
 h2 {
