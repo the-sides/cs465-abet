@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel='stylesheet' href='styles/results.css'>
+	<link rel='stylesheet' href='styles/abet.css'>
     <title>UTK ABET</title>
 </head>
 <body>
@@ -19,8 +19,8 @@
         </div>
     </header>
     <section class="wrapper">
-        <nav>
-            <h4>Section</h4>
+        <nav class="main-nav">
+            <h4>Section:</h4>
             <select name="section" id="section">
                 <option value="sp2019">COSC365 spring 2019</option>
             </select>
@@ -32,29 +32,33 @@
         </nav>
         <main>
             <section class="results">
-                <h3>Results</h3>
-                <section class="description"></section>
-                <section class="example"></section>
+                <h2>Results</h2>
+                <p class="description">
+                    Please enter the number of students who do not meet expectations, meet expectations, and exceed expectations. You can type directly into the boxes--you do not need to use the arrows.
+                </p>
+                <section class="example">
+                    <p> <b>Outcome 2 - CS: </b> Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program's discipline.
+                    </p>
+                </section>
                 <section class="expectations">
                     <div class="labels">
                             <label for="bad">Not Meets Expectations</label>
                             <label for="ok">Meets Expectations</label>
                             <label for="good">Exceeds Expectations</label>
-                            <p>Total</p>
+                            <p class="totalValue label">Total</p>
                     </div>
                     <div class="filters">
-                        <span class="line"></span>
-                            <input type="number" name="bad" id="bad">
-                            <input type="number" name="ok" id="ok">
-                            <input type="number" name="good" id="good">
-                            <p class="totalValue">...</p>
+                        <input type="number" name="bad" id="bad" value="0">
+                        <input type="number" name="ok" id="ok" value="0">
+                        <input type="number" name="good" id="good" value="0">
+                        <p class="totalValue value">0</p>
                         </div>
                     </div>
-                    <button type="submit">Save Results</button>
+                    <button class="btn btn--blue" type="submit">Save Results</button>
                 </section>
             </section>
             <section class="ass-plan">
-                <h3>Assessment Plan</h3>
+                <h2>Assessment Plan</h2>
                 <ol>
                     <li>Please enter your ...</li>
                     <li>Always press "Save Assessments" when ...</li>
@@ -73,7 +77,7 @@
                 <button>Save Assessments</button>
             </section>
             <section class="summary">
-                <h3>Narrative Summary</h3>
+                <h2>Narrative Summary</h2>
                 <p>Please enter your narractive for each outcome ...</p>
                 <p>Strengths</p>
                 <textarea name="strengths" id="strengths" cols="30" rows="10"></textarea>
@@ -85,5 +89,6 @@
             </section>
         </main>
     </section>
+    <script src="scripts/client.js"></script>
 </body>
 </html>
