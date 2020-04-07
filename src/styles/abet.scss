@@ -1,0 +1,143 @@
+@import 'variables';
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+body {
+    font-family: Helvetica, sans-serif;
+    color: $black;
+}
+p {
+    line-height: 24px;
+}
+header {
+    height: 64px;
+    border: solid 1px $grey;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: $darkgrey;
+    background-color: $lightgrey;
+    * > {
+        flex: 1 50%;
+        align-self: center;
+    }
+    h4 {
+        margin-left: 1rem;
+    }
+    div {
+        figure {
+            height: 100%;
+            display: flex;
+            margin: 0 1rem;
+            img {
+                flex: 1;
+                align-self: center;
+            }
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    * > {
+        flex: 1;
+    }
+}
+
+nav.main-nav {
+    max-width: 150px;
+    padding-left: 1rem;
+    background-color: $lightgrey;
+    border-right: 1px solid $grey;
+    a {
+        display: block;
+    }
+}
+main {
+    padding: 0 2rem;
+    width: 100%;
+    // margin-left: auto;
+    // margin-right: auto;
+}
+
+h2 {
+    font-size: 24px;
+    border-bottom: 1px lightgrey solid;
+    padding: 2rem 0 1rem;
+}
+
+.btn{
+    &--green{
+        background-color: $green;
+    }
+    &--red{
+        background-color: $red;
+    }
+    &--blue{
+        background-color: $blue;
+    }
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    &:active,
+    &:focus {
+        box-shadow: inset $black 0px 0px 8px ;
+    }
+}
+
+.results {
+    .example {
+        background-color: $grey;
+        padding: 1rem 0.75rem;
+        border-radius: 4px;
+        box-shadow: inset $black 0px 0px 1px ;
+        p {
+            margin: 0;
+        }
+    }
+    .labels, .filters {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        * {
+            flex: 0 1 25%;
+            min-width: 205px;
+        }
+        label {
+            align-self: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .totalValue { 
+            display: block;
+            min-width: 100px;
+            text-align: center;
+            flex: 0 1 5%;
+        }
+    }
+    .labels {
+        border-bottom: 2px lightgrey solid;
+        margin-bottom: 1rem;
+    }
+    .filters {
+        * {
+            font-size: 16px;
+        }
+        input {
+            padding: 0.3rem 0.8rem;
+            border: 1px #b6b6b6 solid;
+            border-radius: 6px;
+            height: 32px;
+        }
+    }
+    button {
+        display: block;
+        margin-top: 1rem;
+        margin-left: auto;
+    }
+}
