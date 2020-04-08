@@ -53,10 +53,7 @@ CREATE TABLE OutcomeResults(
 	major ENUM ('CS', 'CpE', 'EE'),
 	performanceLevel ENUM ('1', '2', '3'),
 	numberOfStudents INT(4),
-	FOREIGN KEY (sectionId)
-		REFERENCES Sections(sectionId),
-	FOREIGN KEY (outcomeId)
-		REFERENCES Outcomes(outcomeId)
+	PRIMARY KEY (sectionId, outcomeId, performanceLevel)
 );
 
 CREATE TABLE Assessments(
