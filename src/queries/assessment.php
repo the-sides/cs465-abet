@@ -17,9 +17,9 @@ $major = $conn->real_escape_string($_GET["major"]);
 $outcome = $conn->real_escape_string($_GET["outcome"]);
 $section = $conn->real_escape_string($_GET["sectionId"]);
 $sql = ("SELECT assessmentDescription, weight FROM Assessments
-	WHERE major = 'CS'
-			AND outcomeId = 2
-					AND sectionId = 3
+	WHERE major = '$major'
+			AND outcomeId = '$outcome'
+					AND sectionId = '$section'
 						ORDER BY weight DESC, assessmentDescription ASC;");
 
 $result = $conn->query($sql);
