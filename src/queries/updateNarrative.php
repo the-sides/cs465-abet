@@ -16,13 +16,16 @@ mysqli_set_charset($conn,"utf8");
 $major = $conn->real_escape_string($_GET["major"]);
 $outcome = $conn->real_escape_string($_GET["outcomeId"]);
 $section = $conn->real_escape_string($_GET["sectionId"]); 
-$performanceLvl = $conn->real_escape_string($_GET["performanceLevel"]);
-$studentsN =  $conn->real_escape_string($_GET["numberOfStudents"]);
+$strengths = $conn->real_escape_string($_GET["strengths"]);
+$weak =  $conn->real_escape_string($_GET["weaknesses"]);
+$actions =  $conn->real_escape_string($_GET["actions"]);
 $sql = ("
-		INSERT INTO OutcomeResults (sectionId, outcomeId, major, performanceLevel, numberOfStudents)
-		        VALUES ('$section', '$outcome', '$major', '$performanceLvl', '$studentsN')
+		INSERT INTO Narratives (sectionId, major, outcomeId, strengths, weaknesses, actions)
+		        VALUES ('$section', '$major', '$outcome', '$strengths', '$weak', '$actions')
 				ON DUPLICATE KEY UPDATE
-				        numberOfStudents = '$studentsN'
+				        strengths='$strengths',
+						weaknesses='$weak',
+						actions='$actions'
 		;");
 
 $result = $conn->query($sql);
