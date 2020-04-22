@@ -8,14 +8,18 @@ div {
 }
 
 #sign-in {
-	font-size: 2.5rem;
 	display: block;
 	width: 95vw;
 	background-color: lightgrey;
 	border: solid 1px grey;
+	h1 {
+		vertical-align: middle;
+		margin: 0;
+	}
 }
 
 input {
+  margin: 0;
   display: block;
   width: 95vw;
   font-size: 2rem;
