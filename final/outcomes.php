@@ -1,4 +1,5 @@
 <?php
+
 $servername = "dbs2.eecs.utk.edu";
 $username = "dmw131";
 $password = "respectMyAuthority";
@@ -17,19 +18,23 @@ mysqli_set_charset($conn,"utf8");
 
 $major = $conn->real_escape_string($_GET["major"]);
 $section = $conn->real_escape_string($_GET["sectionId"]);
-$sql = ("SELECT outcomeId, outcomeDescription FROM Outcomes
-	WHERE outcomeId IN (SELECT outcomeId FROM OutcomeResults
-			WHERE major = '$major'
-						AND sectionId = '$section')
-		ORDER BY outcomeId;");
+$sql = ("SELECT o.outcomeId, o.outcomeDescription, o.major FROM Outcomes o, Sections s, CourseOutcomeMapping c
+    WHERE s.sectionId = '$section'
+	        AND s.courseId = c.courseId
+			        AND c.major = '$major'
+					        AND o.major = '$major'
+							        AND o.outcomeId = c.outcomeId
+									    ORDER BY outcomeId ;");
 
 $result = $conn->query($sql);
+$data = array();
 
 if($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo json_encode($row);
+		$data[] = $row;
 	}
 }
 
+echo json_encode($data);
 $conn->close();
 ?>
