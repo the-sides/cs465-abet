@@ -22,6 +22,7 @@ select {
   display: inline-block;
   font: inherit;
   line-height: 1.5em;
+  max-width: 90%;
   padding: 0.5em 3.5em 0.5em 1em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -78,6 +79,7 @@ nav.main-nav {
     margin-bottom: -1px;
     text-decoration: none;
     color: #2074b0;
+	cursor: pointer;
     padding: 1rem 0.8rem; }
     nav.main-nav a:hover {
       color: purple; }

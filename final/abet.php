@@ -1,6 +1,11 @@
 <?php
 session_start();
-$user_data = $_SESSION['user_data'];
+$user_data = JSON_DECODE($_SESSION['user_data']);
+$shorthands = [
+	'spring' => 'sp',
+	'fall'   => 'fa',
+];
+var_dump($user_data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,14 +35,22 @@ $user_data = $_SESSION['user_data'];
     <section class="wrapper">
         <nav class="main-nav">
             <h4>Section:</h4>
-            <select name="section" id="section">
-                <option value="sp2019">COSC365 spring 2019</option>
+            <select name="section" id="sectionMenu">
+				<?php
+					$ind = 1;
+					foreach($user_data as $row){
+						echo '<option value="section'.$ind++.'"';
+						echo 'data-major="'.$row->major.'"';
+						echo 'data-sectionid="'.$row->sectionId.'"';
+						echo '>';
+						echo $row->courseId.' ';
+						echo $row->semester.' ';
+						echo $row->year.' ';
+						echo $row->major;
+						echo '</option>';
+					}
+				?>
             </select>
-            <a href="?outcome=2" id='2'>Outcome 2</a>
-            <a href="?outcome=3">Outcome 3</a>
-            <a href="?outcome=4">Outcome 4</a>
-            <a href="?outcome=5">Outcome 5</a>
-            <a href="?outcome=6">Outcome 6</a>
         </nav>
         <main>
             <section class="results panel">
@@ -121,5 +134,7 @@ $user_data = $_SESSION['user_data'];
         </main>
     </section>
     <script src="client.js"></script>
+	<script src='outcomes.js'> </script>
+	<script src='section.js'> </script>
 </body>
 </html>
