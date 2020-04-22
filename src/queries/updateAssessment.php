@@ -16,7 +16,7 @@ $major = $conn->real_escape_string($_GET["major"]);
 $outcome = $conn->real_escape_string($_GET["outcomeId"]);
 $section = $conn->real_escape_string($_GET["sectionId"]); 
 $assessment = $conn->real_escape_string($_GET["assessmentId"]);
-$desc = $conn->real_escape_string($_GET["assessmentDesc"]);
+$desc = $conn->real_escape_string($_GET["assessmentDescription"]);
 $weight =  $conn->real_escape_string($_GET["weight"]);
 $sql = ("
 	INSERT INTO Assessments (assessmentId, sectionId, assessmentDescription, weight, outcomeId, major)
@@ -34,12 +34,14 @@ $sql = ("
 
 $result = $conn->query($sql);
 var_dump($result);
+$out = [];
 
 if($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo json_encode($row);
+			array_push($out, $row);
 	}
 }
+echo json_encode($out);
 
 $conn->close();
 ?>
