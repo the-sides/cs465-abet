@@ -8,7 +8,7 @@
 	</div>
 
 	<form method='GET' action='autho.php'>
-	  <p class="error">
+	  <p class="error" id="loginFail">
 	  <?php
 		if($_GET['failed']) echo('invalid e-mail or password');
 	  ?>
@@ -20,7 +20,7 @@
 	  <input type="password" placeholder="Password" id='password' name='password'>
 	  </div>
 	  <div>
-		<input type="submit" value="login">
+		<input type="submit" value="login" id="login">
 		</div>
 	</form>
 </body>
