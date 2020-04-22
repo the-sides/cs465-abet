@@ -1,9 +1,13 @@
+<?php
+session_start();
+$user_data = $_SESSION['user_data'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel='stylesheet' href='styles/abet.css'>
+	<link rel='stylesheet' href='abet.css'>
     <title>UTK ABET</title>
 </head>
 <body>
@@ -29,11 +33,11 @@
             <select name="section" id="section">
                 <option value="sp2019">COSC365 spring 2019</option>
             </select>
-            <a href="/abet?outcome=2" id='2'>Outcome 2</a>
-            <a href="/?outcome=3">Outcome 3</a>
-            <a href="/?outcome=4">Outcome 4</a>
-            <a href="/?outcome=5">Outcome 5</a>
-            <a href="/?outcome=6">Outcome 6</a>
+            <a href="?outcome=2" id='2'>Outcome 2</a>
+            <a href="?outcome=3">Outcome 3</a>
+            <a href="?outcome=4">Outcome 4</a>
+            <a href="?outcome=5">Outcome 5</a>
+            <a href="?outcome=6">Outcome 6</a>
         </nav>
         <main>
             <section class="results panel">
@@ -116,6 +120,6 @@
             </section>
         </main>
     </section>
-    <script src="scripts/client.js"></script>
+    <script src="client.js"></script>
 </body>
 </html>

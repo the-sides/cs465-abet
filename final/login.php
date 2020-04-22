@@ -1,6 +1,5 @@
 <head>
-	<link rel='stylesheet' href='styles/login.css'>
-	{# <link rel='stylesheet' href='login.css'> #}
+	<link rel='stylesheet' href='login.css'>
 </head>
 
 <body>
@@ -8,15 +7,22 @@
 		<h1> Please Sign In </h1>
 	</div>
 
-	<form>
+	<form method='GET' action='autho.php'>
+	  <p class="error">
+	  <?php
+		if($_GET['failed']) echo('invalid e-mail or password');
+	  ?>
+	  </p>
 	  <div>
-		<input type="email" placeholder="E-mail">
+		<input type="email" placeholder="E-mail" id='email' name='email'>
 	  </div>
 	  <div>
-	  <input type="password" placeholder="Password">
+	  <input type="password" placeholder="Password" id='password' name='password'>
 	  </div>
 	  <div>
 		<input type="submit" value="login">
 		</div>
 	</form>
 </body>
+
+
