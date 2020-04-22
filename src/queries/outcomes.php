@@ -17,19 +17,25 @@ mysqli_set_charset($conn,"utf8");
 
 $major = $conn->real_escape_string($_GET["major"]);
 $section = $conn->real_escape_string($_GET["sectionId"]);
-$sql = ("SELECT outcomeId, outcomeDescription FROM Outcomes
-	WHERE outcomeId IN (SELECT outcomeId FROM OutcomeResults
-			WHERE major = '$major'
-						AND sectionId = '$section')
-		ORDER BY outcomeId;");
+$sql = ("SELECT o.outcomeId, o.outcomeDescription FROM Outcomes o, Sections s, CourseOutcomeMapping c
+	WHERE s.sectionId = '$section'
+		AND s.year = c.year
+		AND s.semester = c.semester
+		AND s.courseId = c.courseId
+		AND c.major = '$major'
+		AND o.major = '$major'
+		AND o.outcomeId = c.outcomeId
+	ORDER BY outcomeId ;");
 
 $result = $conn->query($sql);
+$out = [];
 
 if($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo json_encode($row);
+			array_push($out, $row);
 	}
 }
+echo json_encode($out);
 
 $conn->close();
 ?>
