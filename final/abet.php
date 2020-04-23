@@ -104,7 +104,7 @@ var_dump($user_data);
             
             <section class="summary panel">
                 <h2>Narrative Summary</h2>
-                <p>Please enter your narractive for each outcome, including the student strengths for the outcome, student weaknesses for the outcomes, and suggested actions for improving student attainment of each outcome.</p>
+                <p>Please enter your narrative for each outcome, including the student strengths for the outcome, student weaknesses for the outcomes, and suggested actions for improving student attainment of each outcome.</p>
                 <p class='label'>Strengths</p>
                 <textarea name="strengths" id="strengths" cols="60" rows="10" maxlength="2000" placeholder="None"></textarea>
                 <p class='label'>Weaknesses</p>

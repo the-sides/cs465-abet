@@ -11,6 +11,9 @@ body {
 p {
   line-height: 24px; }
 
+svg {
+	pointer-events: none;}
+
 textarea {
   font-size: 1.3em; }
 
@@ -32,7 +35,7 @@ select {
   border-right-width: 12px; }
 
 .hidden {
-	display: none; }
+	display: none !important;}
 .success {
 	color: green; }
 .fail {

@@ -16,7 +16,7 @@ mysqli_set_charset($conn,"utf8");
 $major = $conn->real_escape_string($_GET["major"]);
 $outcome = $conn->real_escape_string($_GET["outcome"]);
 $section = $conn->real_escape_string($_GET["sectionId"]);
-$sql = ("SELECT assessmentDescription, weight FROM Assessments
+$sql = ("SELECT assessmentDescription, weight, assessmentId FROM Assessments
 	WHERE major = '$major'
 			AND outcomeId = '$outcome'
 					AND sectionId = '$section'
