@@ -9,9 +9,18 @@
 
 	<form method='GET' action='autho.php'>
 	  <p class="error" id="loginFail">
-	  <?php
-		if($_GET['failed']) echo('invalid e-mail or password');
-	  ?>
+		  <?php
+			if($_GET['failed']) echo('invalid e-mail or password');
+		  ?>
+	  </p>
+	  <p class="success" id="logoutSuccess">
+		  <?php
+			if($_GET['logout']){
+				session_start();
+				$_SESSION['user_data'] = '';
+				echo ('Logout success');
+			};
+		  ?>
 	  </p>
 	  <div>
 		<input type="email" placeholder="E-mail" id='email' name='email'>

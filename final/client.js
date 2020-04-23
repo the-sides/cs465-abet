@@ -5,6 +5,7 @@ const outcomeMenuStage = document.querySelector('.main-nav');
 const sectionStatus = document.querySelector('.sectionLabel');
 const sectionStage = document.querySelector('#sectionMenu');
 const assessmentStage = document.querySelector('.inputsWrapper');
+const userMenu = document.querySelector('.user-menu');
 
 const recountTotal = ev => {
     const scores = expectScoreElms.map(elm => Number(elm.value))
@@ -53,4 +54,11 @@ const reporter = (area, res, msg) => {
 
 expectScoreElms.forEach(input => {
     input.addEventListener('change', recountTotal)
+})
+
+document.querySelector('#active-user-menu').addEventListener('click', () => {
+	userMenu.classList.toggle('hidden-menu');
+})
+document.querySelector('#logout').addEventListener('click', () => {
+	window.location.assign('login.php?logout=true')
 })

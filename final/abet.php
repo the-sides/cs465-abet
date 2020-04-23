@@ -1,6 +1,6 @@
 <?php
-session_start();
-$user_data = JSON_DECODE($_SESSION['user_data']);
+	session_start();
+	$user_data = JSON_DECODE($_SESSION['user_data']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,8 @@ $user_data = JSON_DECODE($_SESSION['user_data']);
 <body>
     <header>
         <h4>UTK ABET</h4>
-        <div>
-            <figure>
+        <div style="position: relative;">
+            <figure id="active-user-menu">
                 <!-- Yeah, I know this isn't how svg's shouldn't be displayed. Bite me. -->
                 <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#2074b0" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
@@ -23,7 +23,11 @@ $user_data = JSON_DECODE($_SESSION['user_data']);
                     <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z"/>
                 </svg>
             </figure>
-            <nav>
+            <nav class="user-menu hidden-menu">
+				<input type="submit" id="logout" class="btn btn--red" value="Log Out" >
+				<input type="text" id="newPassword" placeholder="New Password">
+				<input type="text" id="confirmPassword" placeholder="Confirm Password">
+				<input type="submit" id="changePassword" class="btn btn--green" value="Change Password" >
             </nav>
         </div>
     </header>
@@ -54,7 +58,7 @@ $user_data = JSON_DECODE($_SESSION['user_data']);
                     Please enter the number of students who do not meet expectations, meet expectations, and exceed expectations. You can type directly into the boxes--you do not need to use the arrows.
                 </p>
                 <section class="example">
-                    <p> <b>Outcome 2 - CS: </b> Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program's discipline.
+                    <p> 
                     </p>
                 </section>
                 <section class="expectations">

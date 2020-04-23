@@ -43,6 +43,9 @@ select {
 .panel {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 1.5rem; }
+.hidden-menu {
+	max-height: 0px !important;
+	overflow: hidden; }
 
 header {
   height: 64px;
@@ -52,6 +55,14 @@ header {
   justify-content: space-between;
   color: #767676;
   background-color: #f7f7f7; }
+  header .user-menu {
+	position: absolute;
+	right: 0;
+	top: 65px;
+	display: block;
+	max-height: 170px;
+	transition: all 0.3s ease-in;
+	z-index: 4; }
   header * > {
     flex: 1 50%;
     align-self: center; }
