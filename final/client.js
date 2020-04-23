@@ -4,6 +4,7 @@ const outcomeDescStage = document.querySelector('.results > .example > p');
 const outcomeMenuStage = document.querySelector('.main-nav');
 const sectionStatus = document.querySelector('.sectionLabel');
 const sectionStage = document.querySelector('#sectionMenu');
+const assessmentStage = document.querySelector('.inputsWrapper');
 
 const recountTotal = ev => {
     const scores = expectScoreElms.map(elm => Number(elm.value))
@@ -41,11 +42,13 @@ const reporter = (area, res, msg) => {
 	
 	elm.classList.remove('hidden')
 	opElm.classList.add('hidden')
+
+	/*   BOOOOOOOOO let me do my own thing
 	if(msg) elm.textContent = msg;
 	setTimeout(() => {
 		elm.classList.add('hidden')
 		elm.textContent = oldMsg;
-	}, 2000)
+	}, 2000)*/
 }
 
 expectScoreElms.forEach(input => {
