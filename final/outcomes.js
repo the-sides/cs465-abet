@@ -38,7 +38,7 @@ const fetchOutcomes = (major, section) => {
 				result.push({
 					id: item.outcomeId,
 					desc: item.outcomeDescription,
-					major: item.major
+					major: major
 				});
 			}
 		}
