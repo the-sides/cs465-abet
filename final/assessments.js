@@ -3,7 +3,7 @@ const assPlate = ` <input type="number" name="weight" id="weight%i" class='weigh
 const createAss = () => {
 	const newAss = document.createElement('div')
 	let assContent = assPlate;
-	assContent.replace(//, '69')
+	assContent.replace(/asdfasdf/, '69')
 	newAss.innerHTML = assContent
 	newAss.classList.add('inputs')
 	console.log(newAss)
