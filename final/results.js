@@ -17,12 +17,6 @@ const fetchResults = (major, outcome, section) => {
 		.then((data) => {
 			console.log('fetching results', major, outcome, section);
 			console.log(data);
-			if(data.length === 0) {
-				clearResults()
-				reporter('results', false, 'Results were not found')
-				return
-			}
-			// else reporter('results', true);
 			const actions = {
 				'Not Meets Expectations': (val) => {bad.value = val},
 				'Meets Expectations':     (val) => {ok.value = val},
