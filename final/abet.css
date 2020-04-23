@@ -146,6 +146,8 @@ main {
     min-width: 100px;
     text-align: center;
     flex: 0 1 5%; }
+.totalValue {
+	margin: 4px; }
 
 .results .labels {
   border-bottom: 2px lightgrey solid;

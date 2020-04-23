@@ -1,11 +1,6 @@
 <?php
 session_start();
 $user_data = JSON_DECODE($_SESSION['user_data']);
-$shorthands = [
-	'spring' => 'sp',
-	'fall'   => 'fa',
-];
-var_dump($user_data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +106,7 @@ var_dump($user_data);
                 <textarea name="weaknesses" id="weaknesses" cols="60" rows="10" maxlength="2000" placeholder="None"></textarea>
                 <p class='label'>Actions</p>
                 <textarea name="actions" id="actions" cols="60" rows="10" maxlength="2000" placeholder="None"></textarea>
-                <button class="btn btn--blue">Save Narrative</button>
+                <button id="saveNarrative" class="btn btn--blue">Save Narrative</button>
 				<p id="narrativeSuccess" class="hidden success narrativesResponce">Narrative successfully saved</p>
 				<p id="narrativeFail" class="hidden fail narrativesResponce">Narrative unsuccessfully saved</p>
             </section>
@@ -120,6 +115,7 @@ var_dump($user_data);
     <script src="client.js"></script>
 	<script src='results.js'> </script>
 	<script src='assessments.js'> </script>
+	<script src='narratives.js'> </script>
 	<script src='outcomes.js'> </script>
 	<script src='section.js'> </script>
 </body>

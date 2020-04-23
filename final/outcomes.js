@@ -9,6 +9,7 @@ const handleOutcomeClick = ev => {
 	outcomeDescStage.innerHTML = `<b>Outcome ${outcomeId} - ${major}: </b> ${desc}`
 	fetchResults(major, outcomeId, sectionId);
 	fetchAsses();
+	fetchNars();
 }
 
 const createOutcome = (id, desc, major) => {
