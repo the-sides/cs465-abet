@@ -1,10 +1,13 @@
-const outcomeDescStage = document.querySelector('.results > .example > p');
-const outcomeMenuStage = document.querySelector('.main-nav');
-const setOutcome = ev => {
-	const id = ev.srcElement.dataset.id
+
+const handleOutcomeClick = ev => {
+	const outcomeId = ev.srcElement.dataset.id
 	const desc = ev.srcElement.dataset.desc
 	const major = ev.srcElement.dataset.major
-	outcomeDescStage.innerHTML = `<b>Outcome ${id} - ${major}: </b> ${desc}`
+	const sectionId = sectionStatus.dataset.id
+	outcomeMenuStage.querySelectorAll('a').forEach(elm => elm.classList.remove('active'))
+	ev.srcElement.classList.add('active');
+	outcomeDescStage.innerHTML = `<b>Outcome ${outcomeId} - ${major}: </b> ${desc}`
+	fetchResults(major, outcomeId, sectionId);
 }
 
 const createOutcome = (id, desc, major) => {
@@ -14,7 +17,7 @@ const createOutcome = (id, desc, major) => {
 	newElm.dataset.id = id;
 	newElm.dataset.desc = desc;
 	newElm.dataset.major = major;
-	newElm.addEventListener('click', setOutcome);
+	newElm.addEventListener('click', handleOutcomeClick);
 	outcomeMenuStage.appendChild(newElm);
 	return newElm;
 }
@@ -44,4 +47,3 @@ const fetchOutcomes = (major, section) => {
 	})
 }
 console.log('outcome script running');
-fetchOutcomes('CS', '9');

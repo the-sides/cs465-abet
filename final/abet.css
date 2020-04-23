@@ -31,6 +31,12 @@ select {
   -moz-appearance: none;
   border-right-width: 12px; }
 
+.hidden {
+	display: none; }
+.success {
+	color: green; }
+.fail {
+	color: red; }
 .panel {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 1.5rem; }
