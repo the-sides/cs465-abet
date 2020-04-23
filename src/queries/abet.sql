@@ -81,6 +81,7 @@ CREATE TABLE Narratives(
 	strengths VARCHAR(255),
 	weaknesses VARCHAR(255),
 	actions VARCHAR(255),
+	PRIMARY KEY (sectionId, major, outcomeId),
 	FOREIGN KEY (sectionId)
 		REFERENCES Sections(sectionId),
 	FOREIGN KEY (outcomeId)
