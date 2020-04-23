@@ -92,23 +92,14 @@ var_dump($user_data);
                     <p class="desc">Description</p>
                     <p class="remove">Remove</p>
                 </div>
-                <div class="inputs">
-                    <input type="number" name="weight" id="weight0" class='weight' min="1" max="100">
-                    <textarea name="desc" id="desc0" class="desc" cols="30" rows="5" maxlength="400" placeholder="None"></textarea>
-                    <div id="remove0" class="remove">
-                        <button class="btn btn--red">
-                            <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
-                            </svg>
-                        </button>
-                    </div>
+				<div class="inputsWrapper">
 
-                </div>
-                <button class="btn btn--green">+ New</button>
-                <button class="btn btn--blue">Save Assessments</button>
+				</div>
+                <button id="newAssessment" class="btn btn--green">+ New</button>
+                <button id="saveAssessments" class="btn btn--blue">Save Assessments</button>
 				<p id="assessmentsSuccess" class="hidden success assessmentsResponce">Assessment Plan successfully saved</p>
 				<p id="assessmentsFail" class="hidden fail assessmentsResponce">Assessment Plan unsuccessfully saved</p>
+				<p id="weightsNot100" class="hidden fail">assessment weights must add to 100</p>
             </section>
             
             <section class="summary panel">
@@ -128,6 +119,7 @@ var_dump($user_data);
     </section>
     <script src="client.js"></script>
 	<script src='results.js'> </script>
+	<script src='assessments.js'> </script>
 	<script src='outcomes.js'> </script>
 	<script src='section.js'> </script>
 </body>

@@ -23,12 +23,14 @@ $sql = ("SELECT assessmentDescription, weight FROM Assessments
 						ORDER BY weight DESC, assessmentDescription ASC;");
 
 $result = $conn->query($sql);
+$data = array();
 
 if($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo json_encode($row);
+		$data[] = $row;
 	}
 }
+echo json_encode($data);
 
 $conn->close();
 ?>
