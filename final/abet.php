@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$user_data = JSON_DECODE($_SESSION['user_data']);
+	$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,8 @@
 </head>
 <body>
     <header>
-        <h4>UTK ABET</h4>
+        <h4>UTK ABET  </h4>
+		<p id="email"> <?php echo $email;?> </p>
         <div style="position: relative;">
             <figure id="active-user-menu">
                 <!-- Yeah, I know this isn't how svg's shouldn't be displayed. Bite me. -->
@@ -25,8 +27,11 @@
             </figure>
             <nav class="user-menu hidden-menu">
 				<input type="submit" id="logout" class="btn btn--red" value="Log Out" >
-				<input type="text" id="newPassword" placeholder="New Password">
-				<input type="text" id="confirmPassword" placeholder="Confirm Password">
+				<input type="text" id="newPassword" class="password" placeholder="New Password">
+				<input type="text" id="confirmPassword" class="password" placeholder="Confirm Password">
+				<p id="passwordSucceeded" class="hidden success passwordResponce">password changed</p>
+				<p id="passwordError" class="hidden fail passwordResponce">passwords do not match--please make them match</p>
+
 				<input type="submit" id="changePassword" class="btn btn--green" value="Change Password" >
             </nav>
         </div>
@@ -122,5 +127,6 @@
 	<script src='narratives.js'> </script>
 	<script src='outcomes.js'> </script>
 	<script src='section.js'> </script>
+	<script src='password.js'> </script>
 </body>
 </html>

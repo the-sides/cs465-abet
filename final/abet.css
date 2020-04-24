@@ -60,8 +60,9 @@ header {
 	right: 0;
 	top: 65px;
 	display: block;
-	max-height: 170px;
+	max-height: 200px;
 	transition: all 0.3s ease-in;
+	background-color: white;
 	z-index: 4; }
   header * > {
     flex: 1 50%;
@@ -76,7 +77,6 @@ header {
     header div figure svg {
       flex: 1;
       align-self: center; }
-
 .wrapper {
   display: flex; }
   .wrapper * > {

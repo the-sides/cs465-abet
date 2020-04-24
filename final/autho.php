@@ -34,5 +34,6 @@
 	$conn->close();
 	session_start();
 	$_SESSION['user_data'] = json_encode($data);
+	$_SESSION['email'] = $email;
 	if(count($data) > 0) {header("Location: abet.php");}
 	else {header("Location: login.php?failed=true");}
