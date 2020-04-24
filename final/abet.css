@@ -43,6 +43,9 @@ select {
 .panel {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 1.5rem; }
+.outcomeBtn.active { 
+	background-color: lightgrey;
+}
 .hidden-menu {
 	max-height: 0px !important;
 	overflow: hidden; }

@@ -19,6 +19,7 @@ const createOutcome = (id, desc, major) => {
 	newElm.dataset.id = id;
 	newElm.dataset.desc = desc;
 	newElm.dataset.major = major;
+	newElm.classList.add('outcomeBtn');
 	newElm.addEventListener('click', handleOutcomeClick);
 	outcomeMenuStage.appendChild(newElm);
 	return newElm;
