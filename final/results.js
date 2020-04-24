@@ -11,6 +11,7 @@ const clearResults = () => {
 	}
 
 const fetchResults = (major, outcome, section) => {
+	clearResults();
 	const url = `results.php?major=${major}&outcome=${outcome}&sectionId=${section}`
 	fetch(url)
 		.then(res => res.json())
